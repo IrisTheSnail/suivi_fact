@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'suivi_fact.apps.SuiviFactConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

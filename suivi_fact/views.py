@@ -3,7 +3,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request) :
-    return HttpResponse('<h1>first interface Home</h1>')
+    return render(request, 'suivi_fact/home.html')
 
-def about(request) : 
-    return HttpResponse('<h1>ha page khora, f9lb home</h1>')
+def bo(request) : 
+        return render(request, 'suivi_fact/bo.html')
