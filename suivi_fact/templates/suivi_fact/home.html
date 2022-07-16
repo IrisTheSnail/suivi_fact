@@ -1,1 +1,13 @@
-<h1>waaaa l3ezz dkholt</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title %}
+        <title>Suivi_fact - {{title}}</title>
+    {% else %}
+        <title>Suivi_fact</title>
+    {%endif%}
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
