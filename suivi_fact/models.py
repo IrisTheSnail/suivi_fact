@@ -19,5 +19,5 @@ class Factures(models.Model):
     montant= models.FloatField()
     tauxTVA = models.FloatField()
     montantTTC = models.FloatField()
-    Date_mandat = models.DateTimeField(default=timezone.now)
-    
+    Date_arrivee = models.DateTimeField(default=timezone.now)
+    Date_mandat = models.DateTimeField(defa)
