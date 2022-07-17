@@ -1,5 +1,5 @@
-from tkinter import CASCADE
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -20,4 +20,19 @@ class Factures(models.Model):
     tauxTVA = models.FloatField()
     montantTTC = models.FloatField()
     Date_arrivee = models.DateTimeField(default=timezone.now)
-    Date_mandat = models.DateTimeField(defa)
+    Date_mandat = models.DateTimeField()
+    Date_compta = models.DateTimeField()
+    num_oper = models.IntegerField()
+
+class Departements(models.Model):
+    depart_id = models.AutoField(primary_key=True)
+    nom_depart = models.CharField(max_length=20)
+
+
+class Mouvements(models.Model):
+    mouv_id = models.AutoField(primary_key=True)
+    num_fact = models.ForeignKey(Factures, on_delete=CASCADE)
+    deplacement = models.ForeignKey(Departements)
+    time_mouv = models.DateTimeField(default=timezone.now)
+    motif = models.CharField(max_length=1500)
+
