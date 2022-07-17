@@ -11,11 +11,11 @@ class Fournisseur(models.Model):
 class Commandes(models.Model):
     comm_id = models.AutoField(primary_key=True)
     #date = 
-    num_fourn = models.ForeignKey(Fournisseur, on_delete=CASCADE)
+    num_fourn = models.ForeignKey(Fournisseur, on_delete=models.CASCADE)
 
 class Factures(models.Model):
     fact_id = models.AutoField(primary_key=True)
-    num_comm = models.ForeignKey(Commandes, on_delete=CASCADE)
+    num_comm = models.ForeignKey(Commandes, on_delete=models.CASCADE)
     montant= models.FloatField()
     tauxTVA = models.FloatField()
     montantTTC = models.FloatField()
@@ -31,8 +31,8 @@ class Departements(models.Model):
 
 class Mouvements(models.Model):
     mouv_id = models.AutoField(primary_key=True)
-    num_fact = models.ForeignKey(Factures, on_delete=CASCADE)
-    deplacement = models.ForeignKey(Departements)
+    num_fact = models.ForeignKey(Factures, on_delete=models.CASCADE)
+    deplacement = models.ForeignKey(Departements, on_delete=models.DO_NOTHING)
     time_mouv = models.DateTimeField(default=timezone.now)
     motif = models.CharField(max_length=1500)
 
